@@ -15,40 +15,72 @@ import java.io.IOException;
 public class BulletGame extends PApplet {
 
 
-Bullet b;
+BSingle b;
 
  public void setup() {
    
-   b = new Bullet(0,width/2,height/2,1);
+   b = new BSingle(0,width/2,height,1);
 }
 public void draw () {
   background(255);
   b.display();
   b.shoot();
 }
-class Bullet{
+public class BSingle extends Bullet{
+
+  public BSingle(int c,float xPos,float yPos, float ySpeed){
+    super (c,xPos,yPos,ySpeed);
+  }
+
+  public void display(){
+    rectMode(CENTER);
+    fill (c);
+    rect(xPos,yPos,5,10);
+  }
+
+  public void shoot(){
+    yPos= yPos-ySpeed;
+  }
+
+}
+public abstract class Bullet implements Cloneable{
   int c;
   float xPos;
   float yPos;
   float ySpeed;
 
-Bullet(int c,float xPos,float yPos, float ySpeed){
+Bullet (int c,float xPos,float yPos, float ySpeed){
     this.c = color(c);
     this.xPos = xPos;
     this.yPos = yPos;
     this.ySpeed = ySpeed;
 }
 
-public void display(){
-  rectMode(CENTER);
-  fill (c);
-  rect(xPos,yPos,5,10);
-}
 
-public void shoot(){
-  xPos= xPos+ySpeed;
+public int getColor() {
+  return c;
 }
-
+public float getXPos(){
+  return xPos;
+}
+public float getYPos(){
+  return yPos;
+}
+public float getYSpeed(){
+  return ySpeed;
+}
+public void setColor(int c){
+  this.c=c;
+}
+public void setXpos(float xPos){
+  this.xPos=xPos;
+}
+public void setYpos(float yPos){
+  this.yPos=yPos;
+}
+public void setYSpeed(float ySpeed ) {
+  this.ySpeed=ySpeed;
+}
 
 }
   public void settings() {  size(200,200); }

@@ -1,25 +1,40 @@
-class Bullet{
+public abstract class Bullet implements Cloneable{
   color c;
   float xPos;
   float yPos;
   float ySpeed;
 
-Bullet(int c,float xPos,float yPos, float ySpeed){
+Bullet (int c,float xPos,float yPos, float ySpeed){
     this.c = color(c);
     this.xPos = xPos;
     this.yPos = yPos;
     this.ySpeed = ySpeed;
 }
 
-void display(){
-  rectMode(CENTER);
-  fill (c);
-  rect(xPos,yPos,5,10);
-}
 
-void shoot(){
-  xPos= xPos+ySpeed;
+color getColor() {
+  return c;
 }
-
+float getXPos(){
+  return xPos;
+}
+float getYPos(){
+  return yPos;
+}
+float getYSpeed(){
+  return ySpeed;
+}
+void setColor(color c){
+  this.c=c;
+}
+void setXpos(float xPos){
+  this.xPos=xPos;
+}
+void setYpos(float yPos){
+  this.yPos=yPos;
+}
+void setYSpeed(float ySpeed ) {
+  this.ySpeed=ySpeed;
+}
 
 }
