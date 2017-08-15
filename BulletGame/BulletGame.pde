@@ -7,9 +7,9 @@ Player p;
 
  void setup() {
    size(200,200);
-   b = new BSingle(0,width/2,height,1);
-   bf = new BFull(0,width/2,height,1);
-   bp = new BulletPrototype (b,bf);
+//   b = new BSingle(0,width/2,height,1);
+//   bf = new BFull(0,width/2,height,1);
+   bp = new BulletPrototype ();
    p= new Player(width/2,height);
 }
 void draw () {
@@ -36,13 +36,13 @@ void keyPressed( ) {
   if(key == CODED){
       if(keyCode == LEFT){
         if(p.getXpos()>=0){
-          float i = p.getXpos() - 1;
+          float i = p.getXpos() - 5;
           p.setXpos(i);
         }
       }
       if(keyCode == RIGHT){
         if(p.getXpos()<=width){
-          float i = p.getXpos() + 1;
+          float i = p.getXpos() + 5;
           p.setXpos(i);
         }
       }
