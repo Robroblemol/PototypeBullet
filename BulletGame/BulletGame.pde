@@ -25,10 +25,12 @@ void draw () {
 void keyPressed( ) {
   if(key == 'a'){
     Bullet bt = (Bullet) bp.prototype("BSingle");
+    bt.setPos(p.getXpos(),p.getYpos());
     arrayBullet.add(bt);
   }
   if(key == 'z'){
     Bullet bt = (Bullet) bp.prototype("BFull");
+    bt.setPos(p.getXpos(),p.getYpos());
     arrayBullet.add(bt);
   }
   if(key == CODED){
@@ -36,14 +38,12 @@ void keyPressed( ) {
         if(p.getXpos()>=0){
           float i = p.getXpos() - 1;
           p.setXpos(i);
-
         }
       }
       if(keyCode == RIGHT){
         if(p.getXpos()<=width){
           float i = p.getXpos() + 1;
           p.setXpos(i);
-
         }
       }
   }
