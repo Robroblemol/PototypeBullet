@@ -40,5 +40,7 @@ void setYpos(float yPos){
 void setYSpeed(float ySpeed ) {
   this.ySpeed=ySpeed;
 }
+void display(){};
+void shoot(){};
 
 }

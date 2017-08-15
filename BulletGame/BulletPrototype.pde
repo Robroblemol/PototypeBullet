@@ -7,7 +7,12 @@ class BulletPrototype{
     prototypes.put("BSingle",b);
     prototypes.put("BFull",bf);
   }
-  Object prototype (String type) throws CloneNotSupportedException{
-    return prototypes.get(type).clone();
+  Object prototype (String type){
+    try{
+      return prototypes.get(type).clone();
+    }catch (CloneNotSupportedException e){
+      throw new Error ("Exception in the clone");
+    }
+
   }
 }
