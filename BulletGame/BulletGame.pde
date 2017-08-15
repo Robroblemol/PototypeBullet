@@ -31,5 +31,20 @@ void keyPressed( ) {
     Bullet bt = (Bullet) bp.prototype("BFull");
     arrayBullet.add(bt);
   }
+  if(key == CODED){
+      if(keyCode == LEFT){
+        if(p.getXpos()>=0){
+          float i = p.getXpos() - 1;
+          p.setXpos(i);
 
+        }
+      }
+      if(keyCode == RIGHT){
+        if(p.getXpos()<=width){
+          float i = p.getXpos() + 1;
+          p.setXpos(i);
+
+        }
+      }
+  }
 }
