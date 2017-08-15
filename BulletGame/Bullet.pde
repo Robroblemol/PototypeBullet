@@ -11,6 +11,10 @@ Bullet (int c,float xPos,float yPos, float ySpeed){
     this.ySpeed = ySpeed;
 }
 
+@Override
+protected Object clone () throws CloneNotSupportedException{
+  return super.clone();
+}
 
 color getColor() {
   return c;
