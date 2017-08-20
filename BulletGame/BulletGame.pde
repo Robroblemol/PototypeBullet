@@ -1,6 +1,5 @@
-
-BSingle b;
-BFull bf;
+//BSingle b;
+//BFull bf;
 BulletPrototype bp;
 ArrayList <Bullet> arrayBullet = new ArrayList <Bullet>();
 Player p;
@@ -23,15 +22,18 @@ void draw () {
   p.drawPlayer();
 }
 void keyPressed( ) {
+  Bullet bt;
   if(key == 'a'){
-    Bullet bt = (Bullet) bp.prototype("BSingle");
+    bt = (Bullet) bp.prototype("BSingle");
     bt.setPos(p.getXpos(),p.getYpos());
     arrayBullet.add(bt);
+    println ("piu");
   }
   if(key == 'z'){
-    Bullet bt = (Bullet) bp.prototype("BFull");
+    bt = (Bullet) bp.prototype("BFull");
     bt.setPos(p.getXpos(),p.getYpos());
     arrayBullet.add(bt);
+    println ("piiiuu..");
   }
   if(key == CODED){
       if(keyCode == LEFT){
