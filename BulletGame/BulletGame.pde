@@ -3,7 +3,7 @@ ArrayList <Enemy> arrayEnemy= new ArrayList <Enemy>();
 
 BulletPrototype bp;
 Player p;
-EnemyCreator envCreator = new ConcreteEnemy();
+EnemyCreator eneCreator;
 
 
  void setup() {
@@ -13,6 +13,7 @@ EnemyCreator envCreator = new ConcreteEnemy();
 //   bf = new BFull(0,width/2,height,1);
    bp = new BulletPrototype ();
    p= new Player(width/2,height);
+   eneCreator = new ConcreteEnemy();
 
 }
 void draw () {
@@ -22,6 +23,23 @@ void draw () {
       arrayBullet.get(i).display();
       arrayBullet.get(i).shoot();
     }
+  }
+  if(arrayEnemy.size()==0||arrayEnemy.size()<5){
+    Enemy e;
+    if(random(0,2)>1){
+      arrayEnemy.add(e=eneCreator.newEnemy("blue"));
+    }else{
+      arrayEnemy.add(e=eneCreator.newEnemy("red"));
+    }
+  }
+  if(arrayEnemy.size()!=0){
+    for(int i=0;i<=arrayEnemy.size()-1;i++){
+      arrayEnemy.get(i).drawEnemy();
+      if(arrayEnemy.get(i).getYPos()>250){
+        arrayEnemy.remove(i);
+      }
+    }
+
   }
   p.drawPlayer();
 }

@@ -3,7 +3,7 @@ class RedEnemy implements Enemy{
   color c;
 RedEnemy(){
   this.xPos=random(200);
-  this.yPos=0;
+  this.yPos=-50;
   this.c = color(57,46,152);
   this.ySpeed=3;
 }
@@ -11,7 +11,7 @@ RedEnemy(){
     rectMode(CENTER);
     fill (152,46,46);//color rojo
     noStroke();
-    rect(10,10,xPos,yPos);
+    rect(xPos,yPos,10,20);
     yPos=yPos+ySpeed;
     stroke(0);
   }
