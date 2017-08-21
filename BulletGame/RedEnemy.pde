@@ -1,11 +1,11 @@
-class SquareEnvironment implements Environment{
+class RedEnemy implements Enemy{
 float[] arrayPos = new float[20];
-SquareEnvironment(){
+RedEnemy(){
   for(int i=0;i<20;i++){
     arrayPos[i]=(random(200));
   }
 }
-  void drawEnvironment( ) {
+  void drawEnemy( ) {
 
       for(int i=0;i<=10;i++){
         rectMode(CENTER);

@@ -1,12 +1,10 @@
-//BSingle b;
-//BFull bf;
-
 ArrayList <Bullet> arrayBullet = new ArrayList <Bullet>();
+ArrayList <Enemy> arrayEnemy= new ArrayList <Enemy>();
 
 BulletPrototype bp;
 Player p;
-EnvironmentCreator envCreator = new ConcreteEnvironment();
-Environment entorno = envCreator.newEnvironment();
+EnemyCreator envCreator = new ConcreteEnemy();
+
 
  void setup() {
    size(200,200,P3D);
@@ -15,6 +13,7 @@ Environment entorno = envCreator.newEnvironment();
 //   bf = new BFull(0,width/2,height,1);
    bp = new BulletPrototype ();
    p= new Player(width/2,height);
+
 }
 void draw () {
   background(255);
@@ -24,7 +23,6 @@ void draw () {
       arrayBullet.get(i).shoot();
     }
   }
-  entorno.drawEnvironment();
   p.drawPlayer();
 }
 void keyPressed( ) {

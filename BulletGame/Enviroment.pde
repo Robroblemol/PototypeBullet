@@ -1,3 +1,0 @@
-interface Environment{
-  void drawEnvironment();
-}
