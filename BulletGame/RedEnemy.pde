@@ -1,19 +1,47 @@
 class RedEnemy implements Enemy{
-float[] arrayPos = new float[20];
+  float xPos = 0, yPos = 0, ySpeed=0;
+  color c;
 RedEnemy(){
-  for(int i=0;i<20;i++){
-    arrayPos[i]=(random(200));
-  }
+  this.xPos=random(200);
+  this.yPos=0;
+  this.c = color(57,46,152);
+  this.ySpeed=3;
 }
   void drawEnemy( ) {
-
-      for(int i=0;i<=10;i++){
-        rectMode(CENTER);
-        fill (147,104,154,100);
-        noStroke();
-        rect(arrayPos[i],arrayPos[i+1],10,20);
-        stroke(0);
-      }
-
+    rectMode(CENTER);
+    fill (152,46,46);//color rojo
+    noStroke();
+    rect(10,10,xPos,yPos);
+    yPos=yPos+ySpeed;
+    stroke(0);
   }
+  color getColor() {
+    return c;
+  }
+  float getXPos(){
+    return xPos;
+  }
+  float getYPos(){
+    return yPos;
+  }
+  float getYSpeed(){
+    return ySpeed;
+  }
+  void setColor(color c){
+    this.c=c;
+  }
+  void setXpos(float xPos){
+    this.xPos=xPos;
+  }
+  void setYpos(float yPos){
+    this.yPos=yPos;
+  }
+  void setYSpeed(float ySpeed ) {
+    this.ySpeed=ySpeed;
+  }
+  void setPos(float xPos,float yPos ) {
+    setXpos(xPos);
+    setYpos(yPos);
+  }
+
 }

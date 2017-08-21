@@ -1,22 +1,19 @@
 class BlueEnemy implements Enemy{
-float[] arrayPos = new float[30];
+  float xPos = 0, yPos = 0, ySpeed=0;
+  color c;
 BlueEnemy(){
-  for(int i=0;i<30;i++){
-    arrayPos[i]=(random(200));
-  }
+  this.xPos=random(200);
+  this.yPos=0;
+  this.c = color(57,46,152);
+  this.ySpeed=3;
 }
   void drawEnemy( ) {
 
-      for(int i=0;i<10;i++){
-        pushMatrix();
-        translate(arrayPos[i], arrayPos[i+1],10);
-        fill(147,104,154,100);
-        rotateY(1.25);
-        rotateX(-0.4);
-        stroke(0);
-        box(25);
-        popMatrix();
-      }
-      stroke(0);
+    rectMode(CENTER);
+    fill (147,104,154);//color azul
+    noStroke();
+    rect(10,10,xPos,yPos);
+    yPos=yPos+ySpeed;
+    stroke(0);
   }
 }
