@@ -48,5 +48,7 @@ protected Object clone () throws CloneNotSupportedException{
 
 void display(){};
 void shoot(){};
+float getAreaX(){};
+float getAreaY(){};
 
 }
