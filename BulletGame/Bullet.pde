@@ -15,6 +15,12 @@ Bullet (int c,float xPos,float yPos, float ySpeed){
 protected Object clone () throws CloneNotSupportedException{
   return super.clone();
 }
+float getAreaX( ) {
+  return 0;
+}
+float getAreaY( ) {
+  return 0;
+}
 
 
   color getColor() {

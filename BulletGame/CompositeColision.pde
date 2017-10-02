@@ -9,10 +9,13 @@ class CompositeColision implements Colisionable{
         aEnX=arrayEnemy.get(i).getAreaX();
         aEnY=arrayEnemy.get(i).getAreaY();
         for (int j = 0;j<=arrayBullet.size()-1; j++){
-          if(arrayBullet.get(j).getXPos()>=aEnX+xPos &&
-            arrayBullet.get(j).getYPos()<=aEnY+yPos){
+          aBuY=arrayBullet.get(j).getAreaY();
+          aBuX=arrayBullet.get(j).getAreaX();
+          if(arrayBullet.get(j).getXPos()+aBuX>=aEnX+arrayEnemy.get(i).getXPos() &&
+            arrayBullet.get(j).getYPos()+aBuY<=aEnY+arrayEnemy.get(i).getYPos()){
               arrayBullet.remove(j);
               arrayEnemy.remove(i);
+              println("pasó algo");
             }
         }
       }
