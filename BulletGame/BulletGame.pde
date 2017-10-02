@@ -5,38 +5,55 @@ BulletPrototype bp;
 Player p;
 EnemyCreator eneCreator;
 
+CompositeColision c;
+
+
 
  void setup() {
-   size(200,200,P3D);
+   size(200,200);
    frameRate(24);
 //   b = new BSingle(0,width/2,height,1);
 //   bf = new BFull(0,width/2,height,1);
    bp = new BulletPrototype ();
    p= new Player(width/2,height);
    eneCreator = new ConcreteEnemy();
+   c = new Colisionador();
 
 }
 void draw () {
   background(255);
-  if(arrayBullet.size()!=0){
-    for(int i=0;i<=arrayBullet.size()-1;i++){
-      arrayBullet.get(i).display();
-      arrayBullet.get(i).shoot();
+  if(c.getSizeBullet()!=0){
+  /*  for(int i=0;i<=arrayBullet.size()-1;i++){
+      //arrayBullet.get(i).display();
+      //arrayBullet.get(i).shoot();
+    }*/
+    Bullet b;
+    int r = c.getSizeBullet();
+    for(int i=0;i<=(r-1);i++){
+      b = c.getBullet(i);
+      b.display();
+      b.shoot();
     }
   }
-  if(arrayEnemy.size()==0||arrayEnemy.size()<5){
+  //if(arrayEnemy.size()==0||arrayEnemy.size()<5){
+  if(c.getSizeEnemy()==0||c.getSizeEnemy()<5){
     Enemy e;
     if(random(0,2)>1){
-      arrayEnemy.add(e=eneCreator.newEnemy("blue"));
+      //arrayEnemy.add(e=eneCreator.newEnemy("blue"));
+      c.addEntidad(e=eneCreator.newEnemy("blue"));
     }else{
-      arrayEnemy.add(e=eneCreator.newEnemy("red"));
+      c.addEntidad(e=eneCreator.newEnemy("red"));
+      //arrayEnemy.add(e=eneCreator.newEnemy("red"));
     }
   }
-  if(arrayEnemy.size()!=0){
-    for(int i=0;i<=arrayEnemy.size()-1;i++){
-      arrayEnemy.get(i).drawEnemy();
-      if(arrayEnemy.get(i).getYPos()>250){
-        arrayEnemy.remove(i);
+  if(c.getSizeEnemy()!=0){
+    for(int i=0;i<=c.getSizeEnemy()-1;i++){
+      //arrayEnemy.get(i).drawEnemy();
+      c.getEnemy(i).drawEnemy();
+      //if(arrayEnemy.get(i).getYPos()>250){
+      if(c.getEnemy(i).getYPos()>250){
+        //arrayEnemy.remove(i);
+        c.rmEnemy(i);
       }
     }
 
@@ -48,13 +65,15 @@ void keyPressed( ) {
   if(key == 'a'){
     bt = (Bullet) bp.prototype("BSingle");
     bt.setPos(p.getXpos(),p.getYpos());
-    arrayBullet.add(bt);
+    c.addEntidad(bt);
+    //arrayBullet.add(bt);
     println ("piu");
   }
   if(key == 'z'){
     bt = (Bullet) bp.prototype("BFull");
     bt.setPos(p.getXpos(),p.getYpos());
-    arrayBullet.add(bt);
+    c.addEntidad(bt);
+    //arrayBullet.add(bt);
     println ("piiiuu..");
   }
   if(key == CODED){

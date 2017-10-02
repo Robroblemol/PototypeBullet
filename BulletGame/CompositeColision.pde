@@ -1,7 +1,6 @@
 class CompositeColision implements Colisionable{
-  private ArrayList<Enemy> arrayEnemy = new ArrayList <Enemy>();
-  private ArrayList<Bullet> arrayBullet = new ArrayList <Bullet>();
-
+   ArrayList<Enemy> arrayEnemy = new ArrayList <Enemy>();
+   ArrayList<Bullet> arrayBullet = new ArrayList <Bullet>();
   void getColision(float xPos, float yPos){
     float aEnY=0,aEnX;
     float aBuY=0,aBuX;
@@ -29,4 +28,15 @@ class CompositeColision implements Colisionable{
   void addEntidad (Bullet b){
     arrayBullet.add(b);
   }
+  void rmEnemy(int i ) {
+    arrayEnemy.remove(i);
+  }
+  public int getSizeBullet(){
+    return arrayBullet.size();
+  }
+  int getSizeEnemy(){
+    return arrayEnemy.size();
+  }
+
+
 }
