@@ -4,15 +4,17 @@ class CompositeColision implements Colisionable{
   void getColision(float xPos, float yPos){
     float aEnY=0,aEnX;
     float aBuY=0,aBuX;
-    for (int i=0;i<=arrayEnemy.size()-1;i++){
-      aEnX=arrayEnemy.get(i).getAreaX();
-      aEnY=arrayEnemy.get(i).getAreaY();
-      for (int j = 0;i<=arrayBullet.size()-1; j++){
-        if(arrayBullet.get(j).getXPos()>=aEnX+xPos &&
-          arrayBullet.get(j).getYPos()<=aEnY+yPos){
-            arrayBullet.remove(j);
-            arrayEnemy.remove(i);
-          }
+    if(arrayBullet.size()!=0){
+      for (int i=0;i<=arrayEnemy.size()-1;i++){
+        aEnX=arrayEnemy.get(i).getAreaX();
+        aEnY=arrayEnemy.get(i).getAreaY();
+        for (int j = 0;j<=arrayBullet.size()-1; j++){
+          if(arrayBullet.get(j).getXPos()>=aEnX+xPos &&
+            arrayBullet.get(j).getYPos()<=aEnY+yPos){
+              arrayBullet.remove(j);
+              arrayEnemy.remove(i);
+            }
+        }
       }
     }
   }

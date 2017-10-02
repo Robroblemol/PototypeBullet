@@ -58,6 +58,11 @@ void draw () {
     }
 
   }
+  for(int i =0;i <= c.getSizeBullet()-1;i++){
+        Bullet b = c.getBullet(i);
+    if(c.getSizeBullet()!=0)
+      c.getColision(b.getXPos(),b.getYPos());
+  }
   p.drawPlayer();
 }
 void keyPressed( ) {

@@ -9,7 +9,7 @@ RedEnemy(){
   this.ySpeed=3;
 }
   void drawEnemy( ) {
-    rectMode(CENTER);
+    //rectMode(CENTER);
     fill (152,46,46);//color rojo
     noStroke();
     rect(xPos,yPos,xArea,yArea);

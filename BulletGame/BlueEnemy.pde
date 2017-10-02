@@ -10,7 +10,7 @@ BlueEnemy(){
 }
   void drawEnemy( ) {
 
-    rectMode(CENTER);
+    //rectMode(CENTER);
     fill (147,104,154);//color azul
     noStroke();
     rect(xPos,yPos,xArea,yArea);

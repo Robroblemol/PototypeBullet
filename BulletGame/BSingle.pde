@@ -8,7 +8,7 @@ public class BSingle extends Bullet{
   }
 
   void display(){
-    rectMode(CENTER);
+    //rectMode(CENTER);
     fill (c);
     rect(xPos,yPos,xArea,yArea);
   }
