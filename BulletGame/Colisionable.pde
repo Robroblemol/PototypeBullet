@@ -1,3 +1,3 @@
 interface Colisionable{
-  boolean getColision(float xPos, float yPos);
+  void getColision(float xPos, float yPos);
 }

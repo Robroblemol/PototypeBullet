@@ -1,5 +1,6 @@
 class BlueEnemy implements Enemy{
   float xPos = 0, yPos = 0, ySpeed=0;
+  float xArea =10, yArea =10;
   color c;
 BlueEnemy(){
   this.xPos=random(200);
@@ -12,7 +13,7 @@ BlueEnemy(){
     rectMode(CENTER);
     fill (147,104,154);//color azul
     noStroke();
-    rect(xPos,yPos,10,10);
+    rect(xPos,yPos,xArea,yArea);
     yPos=yPos+ySpeed;
     stroke(0);
   }
@@ -43,5 +44,11 @@ BlueEnemy(){
   void setPos(float xPos,float yPos ) {
     setXpos(xPos);
     setYpos(yPos);
+  }
+  float getAreaX(){
+    return xArea;
+  }
+  float getAreaY(){
+    return yArea;
   }
 }

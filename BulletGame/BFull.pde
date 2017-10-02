@@ -1,7 +1,7 @@
 public class BFull extends Bullet{
 
-  private float xArea = 2.5;
-  private float yArea = 15;
+  float xArea = 2.5;
+  float yArea = 15;
 
   public BFull(int c,float xPos,float yPos, float ySpeed){
     super (c/2,xPos,yPos,ySpeed+5);
@@ -16,12 +16,11 @@ public class BFull extends Bullet{
   void shoot(){
     yPos= yPos-ySpeed;
   }
-
-float getAreaX(){
-  return xArea;
-}
-float getAreaY(){
-  return yArea;
-}
+  float getAreaX(){
+    return xArea;
+  }
+  float getAreaY(){
+    return yArea;
+  }
 
 }

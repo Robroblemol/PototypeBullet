@@ -1,5 +1,6 @@
 class Player{
   float xPos = 0, yPos = 0;
+  float xArea = 25, yArea = 25;
   Player(float xPos,float yPos){
     this.xPos=xPos;
     this.yPos=yPos;
@@ -24,5 +25,11 @@ class Player{
     rectMode(CENTER);
     fill (100);
     rect (xPos,yPos,25,25);
+  }
+  float getAreaX(){
+    return xArea;
+  }
+  float getAreaY(){
+    return yArea;
   }
 }

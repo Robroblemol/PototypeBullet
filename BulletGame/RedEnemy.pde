@@ -1,5 +1,6 @@
 class RedEnemy implements Enemy{
   float xPos = 0, yPos = 0, ySpeed=0;
+  float xArea = 10, yArea = 20;
   color c;
 RedEnemy(){
   this.xPos=random(200);
@@ -11,7 +12,7 @@ RedEnemy(){
     rectMode(CENTER);
     fill (152,46,46);//color rojo
     noStroke();
-    rect(xPos,yPos,10,20);
+    rect(xPos,yPos,xArea,yArea);
     yPos=yPos+ySpeed;
     stroke(0);
   }
@@ -42,6 +43,14 @@ RedEnemy(){
   void setPos(float xPos,float yPos ) {
     setXpos(xPos);
     setYpos(yPos);
+  }
+  @Override
+  float getAreaY(){
+    return yArea;
+  }
+  @Override
+  float getAreaX(){
+    return xArea;
   }
 
 }

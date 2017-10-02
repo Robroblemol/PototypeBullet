@@ -9,4 +9,6 @@ interface Enemy{
   void setYpos(float yPos);
   void setYSpeed(float ySpeed );
   void setPos(float xPos,float yPos );
+  float getAreaY();
+  float getAreaX();
 }
